@@ -8,6 +8,7 @@ require 'includes/form_handlers/login_handler.php';
   <head>
     <meta charset="utf-8">
     <title>Social</title>
+    <link rel="stylesheet" href="assets/css/register.css">
   </head>
   <body>
 
