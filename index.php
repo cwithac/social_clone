@@ -1,13 +1,6 @@
 <?php
-//Connection Variable
-$con = mysqli_connect("localhost", "root", "", "social");
-
-//If error connecting to DB:
-if(mysqli_connect_errno()) {
-  echo "Failed to connect: " . mysqli_connect_errno();
-}
-
- ?>
+require 'config/config.php';
+?>
 
 <html>
   <head>
