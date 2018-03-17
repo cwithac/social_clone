@@ -38,13 +38,13 @@ if(isset($_POST['register_button'])) {
     //Email
     $em = strip_tags($_POST['reg_email']); //strip_tags removes HTML tags
     $em = str_replace(' ', '', $em); //remove spaces
-    $em = ucfirst(strtolower($em)); //capitalize first letter after complete lowercase
+    $em = strtolower($em); //complete lowercase
     $_SESSION['reg_email'] = $em; //Stores variable into session variable
 
     //Email Confirmation
     $em2 = strip_tags($_POST['reg_email2']); //strip_tags removes HTML tags
     $em2 = str_replace(' ', '', $em2); //remove spaces
-    $em2 = ucfirst(strtolower($em2)); //capitalize first letter after complete lowercase
+    $em2 = strtolower($em); //complete lowercase
     $_SESSION['reg_email2'] = $em2; //Stores variable into session variable
 
     //Password & Confirmation
@@ -90,6 +90,7 @@ if(isset($_POST['register_button'])) {
     }
 
     //Database Insert
+    //Final Validation
     if(empty($error_array)) {
       //If no errors...
       $password = md5($password); //MD5 password encryption
@@ -113,6 +114,9 @@ if(isset($_POST['register_button'])) {
           $profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
         }
 
+        //INSERT
+          //id, first_name, last_name, username, email, password, signup_date, profile_pic, num_posts, num_likes, user_closed, friend_array
+        $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')");
     }
 }
 
