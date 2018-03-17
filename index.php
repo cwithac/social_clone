@@ -9,7 +9,6 @@ if(mysqli_connect_errno()) {
 
  ?>
 
-
 <html>
   <head>
     <meta charset="utf-8">

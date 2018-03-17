@@ -1,4 +1,56 @@
-<!DOCTYPE html>
+<?php
+//Connection Variable
+$con = mysqli_connect("localhost", "root", "", "social");
+
+//If error connecting to DB:
+if(mysqli_connect_errno()) {
+  echo "Failed to connect: " . mysqli_connect_errno();
+}
+
+//Variable Declaration
+$fname = ''; //First Name
+$lname = ''; //Last Name
+$em = ''; //Email
+$em2 = ''; //Email Confirm
+$password = ''; //Password
+$password2 = ''; //Password Confirm
+$date = ''; //Registration Date
+$error_array = ''; //Error Message Holding
+
+//Form Handling
+if(isset($_POST['register_button'])) {
+  //Registration button has been clicked ...
+    //First Name
+    $fname = strip_tags($_POST['reg_fname']); //strip_tags removes HTML tags
+    $fname = str_replace(' ', '', $fname); //remove spaces
+    $fname = ucfirst(strtolower($fname)); //capitalize first letter after complete lowercase
+
+    //Last Name
+    $lname = strip_tags($_POST['reg_lname']); //strip_tags removes HTML tags
+    $lname = str_replace(' ', '', $lname); //remove spaces
+    $lname = ucfirst(strtolower($lname)); //capitalize first letter after complete lowercase
+
+    //Email
+    $em = strip_tags($_POST['reg_email']); //strip_tags removes HTML tags
+    $em = str_replace(' ', '', $em); //remove spaces
+    $em = ucfirst(strtolower($em)); //capitalize first letter after complete lowercase
+
+    //Email Confirmation
+    $em2 = strip_tags($_POST['reg_email2']); //strip_tags removes HTML tags
+    $em2 = str_replace(' ', '', $em2); //remove spaces
+    $em2 = ucfirst(strtolower($em2)); //capitalize first letter after complete lowercase
+
+    //Password & Confirmation
+    $password = strip_tags($_POST['reg_password']); //strip_tags removes HTML tags
+    $password2 = strip_tags($_POST['reg_password2']); //strip_tags removes HTML tags
+
+    //Date
+    $date = date("Y-m-d"); //Date Formatting of current date
+
+}
+
+ ?>
+
 <html>
   <head>
     <meta charset="utf-8">
