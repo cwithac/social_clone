@@ -12,6 +12,13 @@ if(isset($_POST['login_button'])) {
       //Upon successful login ...
       $row = mysqli_fetch_array($check_database_query); //Results returned from query in array
       $username = $row['username']; //Access username row of succcessful query
+
+        //If user has closed account, reopen upon login ...
+          $user_closed_query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' AND user_closed='yes'");
+          if(mysqli_num_rows($user_closed_query) == 1) {
+            $reopen_account = mysqli_query($con, "UPDATE users SET user_closed='no' WHERE email='$email'");
+          }
+
       $_SESSION['username'] = $username; //New session variable
       header('Location: index.php'); //Redirect upon successful login
       exit();
