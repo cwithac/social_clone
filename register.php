@@ -47,6 +47,17 @@ if(isset($_POST['register_button'])) {
     //Date
     $date = date("Y-m-d"); //Date Formatting of current date
 
+    // Validation of Email
+    if($em == $em2) {
+      if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
+        $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+      } else {
+        echo "Invalid e-mail format."
+      }
+    } else {
+      echo "Emails do not match."
+    }
+
 }
 
  ?>
