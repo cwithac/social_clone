@@ -55,15 +55,33 @@ if(isset($_POST['register_button'])) {
         $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'"); //If false, account can be created
         $num_rows = mysqli_num_rows($e_check); //If zero, false
           if ($num_rows > 0) {
-            echo "Email already in use."
+            echo "Email already in use.";
           }
       } else {
-        echo "Invalid e-mail format."
+        echo "Invalid e-mail format.";
       }
     } else {
-      echo "Emails do not match."
+      echo "Emails do not match.";
     }
 
+    //Additional Form Validation
+    if(strlen($fname) > 25 || strlen($fname) < 2) {
+      echo "Your first name must be between 2 and 25 characters.";
+    }
+    if(strlen($lname) > 25 || strlen($lname) < 2) {
+      echo
+      "Your last name must be between 2 and 25 characters.";
+    }
+    if($password != $password2) {
+      echo "Passwords do not match.";
+    } else {
+      if(preg_match('/[^A-Za-z0-9]/', $password)) { //Regex Validation
+        echo "Your password can only contain letter or numbers.  Special characters are not allowed."
+      }
+    }
+    if((strlen($password) > 30) || strlen($password) < 5)) {
+      echo "Your password must be between 5 and 30 characters.";
+    }
 }
 
  ?>
