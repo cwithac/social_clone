@@ -34,7 +34,7 @@ form {
   margin-right: auto;
   margin-left: auto;
   top: 7%;
-  width: 60%;
+  width: 45%;
   background-color: #ecf0f1;
   opacity: .97;
   border: 1px solid #bdc3c7;
@@ -45,7 +45,6 @@ form {
 .login_header {
   width: 100%;
   text-align: center;
-  height: 90px;
   background-color: #ecf0f1;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
