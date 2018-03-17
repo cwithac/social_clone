@@ -103,6 +103,16 @@ if(isset($_POST['register_button'])) {
           $username = $username . + '_' . $i;
           $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'"); //Confirm against DB with number
         }
+
+        //Generate Profile Pic (Random)
+        $rand = rand(1, 2); //Random number between 1-2
+        //**TO DO - Update to switch statement for all default images
+        if($rand == 1) {
+          $profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+        } else {
+          $profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
+        }
+
     }
 }
 
