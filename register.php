@@ -18,7 +18,7 @@ $em2 = ''; //Email Confirm
 $password = ''; //Password
 $password2 = ''; //Password Confirm
 $date = ''; //Registration Date
-$error_array = ''; //Error Message Holding
+$error_array = array(); //Error Message Holding
 
 //Form Handling
 if(isset($_POST['register_button'])) {
@@ -62,32 +62,31 @@ if(isset($_POST['register_button'])) {
         $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'"); //If false, account can be created
         $num_rows = mysqli_num_rows($e_check); //If zero, false
           if ($num_rows > 0) {
-            echo "Email already in use.";
+            array_push($error_array, "Email already in use.<br>");
           }
       } else {
-        echo "Invalid e-mail format.";
+        array_push($error_array, "Invalid e-mail format.<br>");
       }
     } else {
-      echo "Emails do not match.";
+      array_push($error_array, "Emails do not match.<br>");
     }
 
     //Additional Form Validation
     if(strlen($fname) > 25 || strlen($fname) < 2) {
-      echo "Your first name must be between 2 and 25 characters.";
+      array_push($error_array, "Your first name must be between 2 and 25 characters.<br>");
     }
     if(strlen($lname) > 25 || strlen($lname) < 2) {
-      echo
-      "Your last name must be between 2 and 25 characters.";
+      array_push($error_array, "Your last name must be between 2 and 25 characters.<br>");
     }
     if($password != $password2) {
-      echo "Passwords do not match.";
+      array_push($error_array, "Passwords do not match.<br>");
     } else {
       if(preg_match('/[^A-Za-z0-9]/', $password)) { //Regex Validation
-        echo "Your password can only contain letter or numbers.  Special characters are not allowed."
+        array_push($error_array, "Your password can only contain letter or numbers.  Special characters are not allowed.<br>");
       }
     }
-    if((strlen($password) > 30) || strlen($password) < 5)) {
-      echo "Your password must be between 5 and 30 characters.";
+    if((strlen($password > 30)) || (strlen($password) < 5)) {
+      array_push($error_array, "Your password must be between 5 and 30 characters.<br>");
     }
 }
 
@@ -102,25 +101,25 @@ if(isset($_POST['register_button'])) {
     <form action="register.php" method="POST">
       <input type="text" name="reg_fname" placeholder="First Name" value="<?php
         if(isset($_SESSION['reg_fname'])) {
-          echo $_SESSION['reg_fname']
+          echo $_SESSION['reg_fname'];
         }
       ?>" required>
       <br>
       <input type="text" name="reg_lname" placeholder="Last Name" value="<?php
         if(isset($_SESSION['reg_lname'])) {
-          echo $_SESSION['reg_lname']
+          echo $_SESSION['reg_lname'];
         }
       ?>" required>
       <br>
       <input type="email" name="reg_email" placeholder="Email" value="<?php
         if(isset($_SESSION['reg_email'])) {
-          echo $_SESSION['reg_email']
+          echo $_SESSION['reg_email'];
         }
       ?>" required>
       <br>
       <input type="email" name="reg_email2" placeholder="Confirm Email" value="<?php
         if(isset($_SESSION['reg_email2'])) {
-          echo $_SESSION['reg_email2']
+          echo $_SESSION['reg_email2'];
         }
       ?>" required>
       <br>
