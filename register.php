@@ -10,14 +10,16 @@ require 'includes/form_handlers/login_handler.php';
     <title>Social</title>
     <link href="https://fonts.googleapis.com/css?family=Sevillana" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/register.js" charset="utf-8"></script>
   </head>
   <body>
     <div class="wrapper">
       <div class="login_box">
         <div class="login_header">
           <h1>Social</h1>
-          Log In or Register
         </div>
+        <div id="first">
           <form action="register.php" method="POST">
             <input type="email" name="log_email" placeholder="Email Address" value="<?php
               if(isset($_SESSION['log_email'])) {
@@ -32,8 +34,11 @@ require 'includes/form_handlers/login_handler.php';
             <?php if(in_array("Email or password was incorrect.<br>", $error_array)) {
               echo "Email or password was incorrect.<br>";
             } ?>
+            <br>
+            <a href="#" id="signup" class="signup">Need an account?  Register here.</a>
           </form>
-
+        </div>
+        <div id="second">
           <form action="register.php" method="POST">
             <input type="text" name="reg_fname" placeholder="First Name" value="<?php
               if(isset($_SESSION['reg_fname'])) {
@@ -89,7 +94,10 @@ require 'includes/form_handlers/login_handler.php';
             <?php if(in_array("<span style='color: #27ae60;'>Registration complete.  Please log in.</span><br>", $error_array)) {
               echo "<span style='color: #27ae60;'>Registration complete.  Please log in.</span><br>";
             } ?>
+            <br>
+            <a href="#" id="signin" class="signin">Already have an account?  Log in here.</a>
           </form>
+        </div>
       </div>
     </div>
   </body>

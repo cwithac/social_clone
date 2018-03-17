@@ -5,6 +5,21 @@ body {
   color: #000;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Sevillana', cursive;
+  transition: .5s;
+}
+
+a:hover {
+  color: #27ae60;
+}
+
+form {
+  text-align: center;
+}
+
 .wrapper {
   background-image: url('../images/backgrounds/wood-3157395_1920.jpg');
   background-size: cover;
@@ -41,11 +56,7 @@ body {
   margin-bottom: 0;
   font-family: 'Sevillana', cursive;
   font-size: 250%;
-    color: #27ae60;
-}
-
-form {
-  text-align: center;
+  color: #27ae60;
 }
 
 input[type='submit'] {
@@ -67,4 +78,8 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 input[type='text']:hover, input[type='email']:hover, input[type='password']:hover {
   border-color: #2ecc71;
+}
+
+#second {
+  display: none;
 }
