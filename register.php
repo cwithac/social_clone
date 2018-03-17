@@ -51,6 +51,12 @@ if(isset($_POST['register_button'])) {
     if($em == $em2) {
       if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
         $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+        //Query for email in database
+        $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'"); //If false, account can be created
+        $num_rows = mysqli_num_rows($e_check); //If zero, false
+          if ($num_rows > 0) {
+            echo "Email already in use."
+          }
       } else {
         echo "Invalid e-mail format."
       }
