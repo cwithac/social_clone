@@ -69,3 +69,9 @@ nav a:hover {
   box-shadow: 2px 2px 1px #bdc3c7;
   z-index: -1;
 }
+
+.user_details {
+  width: 250px;
+  float: left;
+  margin-bottom: 20px;
+}
