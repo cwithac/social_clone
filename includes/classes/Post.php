@@ -158,7 +158,7 @@ class Post {
                     } else {
                       $time_message = $interval->s . " seconds ago";
                     }
-                };
+                }; //END TIME FRAME
 
     //Create post content html
             $str .= "<div class='status_post' onClick='javascript:toggle$id()'>
