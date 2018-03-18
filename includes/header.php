@@ -20,13 +20,29 @@ if(isset($_SESSION['username'])) {
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Sevillana" rel="stylesheet">
+    <!-- FONT AWESOME v4.7.0 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- JQUERY -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
     <!-- BOOTSTRAP JS v3.3.7-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
   </head>
   <body>
     <div class="top_bar">
       <div class="logo">
         <a href="index.php">Social</a>
       </div>
+      <nav>
+        <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a>
+      </nav>
     </div>
