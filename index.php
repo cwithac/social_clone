@@ -53,7 +53,33 @@ if(isset($_POST['post'])) {
           $('.posts_area').html(data); //Returned data from AJAX
         }
       });
-    });
+
+      $(window).scroll(function() {
+        var height = $('.posts_area').height; //Height of posts container div
+        var scroll_top = $(this).scrollTop(); //Top of page at any time
+        var page = $('.posts_area').find('.nextPage').val();
+        var noMorePosts = $('posts_area').find('.noMorePosts').val();
+
+          if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
+            //If height scrolled is top of window plus the height of the window and more posts available
+            $('#loading').show();
+            //Ajax Request
+            var ajaxReq = $.ajax({
+              url: 'includes/handlers/ajax_load_posts.php',
+              type: 'POST',
+              data: 'page=' + page + '&userLoggedIn=' + userLoggedIn,
+              cache: false,
+              success: function(data) {
+                $('.posts_area').find('.nextPage').remove(); //Removes current next page
+                $('.posts_area').find('.noMorePosts').remove();
+                $('#loading').hide();
+                $('.posts_area').append(data); //Returned data from AJAX
+              }
+            });
+          } //End if statement
+          return false;
+      }); //End $(window).scroll(function()
+    }); //Document Ready Close
 
 
  </script>

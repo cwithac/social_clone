@@ -7,6 +7,6 @@
   $limit = 10; //Number of posts to load per call
 
   $posts = new Post($con, $_REQUEST['userLoggedIn']);
-  $posts->loadPostsFriends();
+  $posts->loadPostsFriends($_REQUEST, $limit);
 
  ?>
