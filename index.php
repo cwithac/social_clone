@@ -29,6 +29,12 @@ if(isset($_POST['post'])) {
      <input type="submit" name="post" id="post_button" value="POST">
      <hr>
    </form>
+   <?php
+
+    $post = new Post($con, $userLoggedIn); //New instance of Post class
+    $post->loadPostsFriends();
+
+    ?>
  </div>
  <!-- WRAPPER BELOW CLOSE FROM header.php -->
   </div>

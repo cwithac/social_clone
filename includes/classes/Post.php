@@ -34,7 +34,6 @@ class Post {
           $update_query = mysqli_query($this->con, "UPDATE users SET num_posts='$num_posts' WHERE username='$added_by'");
       }
   }
-}
 
   public function loadPostsFriends() {
     $str = ''; //String to return, initialize
@@ -55,16 +54,20 @@ class Post {
       }
 
       //Check if user who posted has a closed accounts (posts will not show)
-      $added_by_obj = new User($con, $added_by);
+      $added_by_obj = new User($this->con, $added_by);
       if($added_by_obj->isClosed()) {
         continue; //Returns to start of while loop
       }
       //Else
       $user_details_query = mysqli_query($this->con, "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'");
       $user_row = mysqli_fetch_array($user_details_query);
+      $first_name = $user_row['first_name'];
+      $last_name = $user_row['last_name'];
+      $profile_pic = $user_row['profile_pic'];
+
             //Timeframe
             $date_time_now = date("Y-m-d H:i:s");
-            $start_date = new DateTime($date_time); //Time of post
+            $start_date = new DateTime($date_time_now); //Time of post
             $end_date = new DateTime($date_time_now); //Current time
             $interval = $start_date->diff($end_date); //Difference between dates
             if($interval->y >= 1) {
@@ -112,7 +115,26 @@ class Post {
                 }
             };
 
+//Create post content html
+        $str .= "<div class='status_post'>
+                  <div class='post_profile_pic'>
+                    <img src='$profile_pic' width='50'>
+                  </div>
+                  <div class='posted_by' style='color:#ACACAC;'>
+                    <a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
+                  </div>
+                  <div id='post_body'>
+                    $body
+                    <br>
+                  </div>
+                </div>
+                <hr>";
+
       } //End while loop
+
+      echo $str;
   }
+} //End Class
+
 
  ?>
