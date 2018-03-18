@@ -57,7 +57,7 @@ class Post {
           $id = $row['id'];
           $body = $row['body'];
           $added_by = $row['added_by'];
-          $time = $row['date_added'];
+          $date_time = $row['date_added'];
 
           //Prepare user_to string to be included if necessary
           if($row['user_to'] == 'none') {
@@ -92,9 +92,10 @@ class Post {
 
                 //Timeframe
                 $date_time_now = date("Y-m-d H:i:s");
-                $start_date = new DateTime($date_time_now); //Time of post
+                $start_date = new DateTime($date_time); //Time of post
                 $end_date = new DateTime($date_time_now); //Current time
                 $interval = $start_date->diff($end_date); //Difference between dates
+
                 if($interval->y >= 1) {
                     if($interval == 1) {
                       $time_message = $interval->y . " year ago"; //1 year ago
@@ -120,18 +121,18 @@ class Post {
                     } else {
                       $time_message = $interval->d . " days ago";
                     }
-                  } else if($interval->h >= 1) {
-                    if($interval->h == 1) {
-                      $time_message = $interval->h . " hour ago";
-                    } else {
-                      $time_message = $interval->h . " hours ago";
-                    }
-                  } else if($interval->i >= 1) {
-                    if($interval->i == 1) {
-                      $time_message = $interval->i . " minute ago";
-                    } else {
-                      $time_message = $interval->i . " minutes ago";
-                    }
+                } else if($interval->h >= 1) {
+                  if($interval->h == 1) {
+                    $time_message = $interval->h . " hour ago";
+                  } else {
+                    $time_message = $interval->h . " hours ago";
+                  }
+                } else if($interval->i >= 1) {
+                  if($interval->i == 1) {
+                    $time_message = $interval->i . " minute ago";
+                  } else {
+                    $time_message = $interval->i . " minutes ago";
+                  }
                 } else {
                     if($interval->s < 30) {
                       $time_message = "Just now";
