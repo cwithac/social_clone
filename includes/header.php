@@ -3,6 +3,8 @@ require 'config/config.php';
 
 if(isset($_SESSION['username'])) {
   $userLoggedIn = $_SESSION['username']; //sets the logged in user with the session
+  $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+  $user = mysqli_fetch_array($user_details_query); //Access User Details
 } else {
   //if a user is not logged in...
   header('Location: register.php'); //redirects back to register page
@@ -39,6 +41,7 @@ if(isset($_SESSION['username'])) {
         <a href="index.php">Social</a>
       </div>
       <nav>
+        <a href="#"><?php echo $user['first_name']; ?></a>
         <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
