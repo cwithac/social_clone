@@ -156,6 +156,13 @@ class Post {
                     <hr>";
 
       } //End while loop
+
+      if($count > $limit) {
+        $str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) > "'>
+                <input type='hidden' class='noMorePosts' value='false'>";
+      } else {
+        $str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: center;'>No more posts to show!</p>";
+      }
     } //End if(mysqli_num_rows($data_query))
       echo $str;
   }

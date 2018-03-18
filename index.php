@@ -58,7 +58,7 @@ if(isset($_POST['post'])) {
         var height = $('.posts_area').height; //Height of posts container div
         var scroll_top = $(this).scrollTop(); //Top of page at any time
         var page = $('.posts_area').find('.nextPage').val();
-        var noMorePosts = $('posts_area').find('.noMorePosts').val();
+        var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
           if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
             //If height scrolled is top of window plus the height of the window and more posts available
