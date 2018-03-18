@@ -44,3 +44,7 @@ nav a:hover {
   text-decoration: none;
   text-shadow: #000 .5px .5px 0px;
 }
+
+#user-fn {
+  font-size: 1em;
+}
