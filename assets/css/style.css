@@ -127,3 +127,23 @@ nav a:hover {
   padding: 5px 4px 4px 5px;
   color: #FFF;
 }
+
+.status_post {
+  width: 95%;
+  font-size: 1em;
+  padding: 0px 5px;
+  min-height: 75px;
+}
+
+.time_message {
+  float: right;
+}
+
+.post_profile_pic {
+  float: left;
+  margin-right: 7px;
+}
+
+.post_profile_pic img {
+  border-radius: 25px;
+}
