@@ -41,7 +41,7 @@ if(isset($_SESSION['username'])) {
         <a href="index.php">Social</a>
       </div>
       <nav>
-        <a id="user-fn" href="#"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
+        <a id="user-fn" href="<?php echo $userLoggedIn; ?>"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
         <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
