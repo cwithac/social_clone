@@ -50,4 +50,4 @@ if(isset($_SESSION['username'])) {
       </nav>
     </div>
     <div class="wrapper">
-      <!-- CLOSING DIV TAG IN index.php -->
+      <!-- .wrapper CLOSING DIV TAG IN index.php -->

@@ -1,5 +1,6 @@
 body {
   line-height: 1em;
+  background-color: #ecf0f1;
 }
 
 nav {
@@ -32,6 +33,8 @@ nav a:hover {
   min-width: 1050px;
   margin: 0 0 10px 0;
   display: inline-flex;
+  position: fixed;
+  z-index: 10;
 }
 
 .logo a {
@@ -47,4 +50,22 @@ nav a:hover {
 
 #user-fn {
   font-size: 1em;
+}
+
+.wrapper {
+  margin: 0 auto;
+  top: 75px;
+  position: relative;
+  padding: 0 10px;
+  width: 75%;
+  min-width: 800px;
+}
+
+.column {
+  background-color: #FFF;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 2px;
+  box-shadow: 2px 2px 1px #bdc3c7;
+  z-index: -1;
 }
