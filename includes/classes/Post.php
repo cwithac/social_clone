@@ -74,6 +74,10 @@ class Post {
             continue; //Returns to start of while loop
           }
 
+          //Friends of check, shows posts only from logged in user and friends of
+          $user_logged_obj = new User($this->con, $userLoggedIn);
+          if($user_logged_obj->isFriend($added_by)) {
+
           if($num_iterations++ < $start){ //Gets to all posts to be loaded before ending
             continue;
           }
@@ -155,7 +159,7 @@ class Post {
                       </div>
                     </div>
                     <hr>";
-
+          } //End of friends of check
       } //End while loop
 
       if($count > $limit) {
