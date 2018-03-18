@@ -49,3 +49,5 @@ if(isset($_SESSION['username'])) {
         <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a>
       </nav>
     </div>
+    <div class="wrapper">
+      <!-- CLOSING DIV TAG IN index.php -->
