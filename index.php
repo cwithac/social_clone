@@ -1,4 +1,5 @@
 <?php
+
 include('includes/header.php');
 include('includes/classes/User.php');
 include('includes/classes/Post.php');
@@ -8,7 +9,6 @@ if(isset($_POST['post'])) {
   $post = new Post($con, $userLoggedIn); //New instance of Post class
   $post->submitPost($_POST['post_text'], 'none'); //SubmitPost from Post.php, post_text from form
 }
-
  ?>
 
  <div class="user_details column">
@@ -29,13 +29,33 @@ if(isset($_POST['post'])) {
      <input type="submit" name="post" id="post_button" value="POST">
      <hr>
    </form>
-   <?php
 
-    $post = new Post($con, $userLoggedIn); //New instance of Post class
-    $post->loadPostsFriends();
+    <div class="posts_area">
 
-    ?>
+    </div>
+    <img src="assets/images/icons/loading.gif" id="loading" alt="loading">
  </div>
+
+ <script>
+ //Loading Icon
+    var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+    $(document).ready(function() {
+      $('#loading').show();
+    });
+
+  //Ajax Request
+  $.ajax({
+    url: 'includes/handlers/ajax_load_posts.php',
+    type: 'POST',
+    data: 'page=1&userLoggedIn=' + userLoggedIn,
+    cache: false,
+    success: function(data) {
+      $('#loading').hide();
+      $('.posts_area').html(data); //Returned data from AJAX
+    }
+  });
+ </script>
+
  <!-- WRAPPER BELOW CLOSE FROM header.php -->
   </div>
   </body>
