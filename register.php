@@ -8,9 +8,13 @@ require 'includes/form_handlers/login_handler.php';
   <head>
     <meta charset="utf-8">
     <title>Social</title>
+    <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Sevillana" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/register.css">
+    <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- JS -->
     <script src="assets/js/register.js" charset="utf-8"></script>
   </head>
   <body>

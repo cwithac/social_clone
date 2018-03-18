@@ -1,10 +1,25 @@
+body {
+  line-height: 1em;
+}
+
 .top_bar {
   width: 100%;
-  height: 40px;
+  height: 50px;
   background-color: #27ae60;
   border-bottom: 5px solid #bdc3c7;
   color: #ecf0f1;
   min-width: 1050px;
   margin: 0 0 10px 0;
   display: inline-flex;
+}
+
+.logo a {
+  font-family: 'Sevillana', cursive;
+  margin-left: 10px;
+  font-size: 200%;
+  position: relative;
+  top: 15px;
+  color: #ecf0f1;
+  text-decoration: none;
+  text-shadow: #000 .5px .5px 0px;
 }
