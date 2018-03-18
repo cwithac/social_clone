@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <style >
+      * {
+        font-size: 12px;
+        font-family: 'Helvetica', sans-serif;
+      }
+
+      a {
+        color: #34495e;
+        text-decoration: none;
+      }
+    </style>
     <?php
     require 'config/config.php';
     include('includes/classes/User.php');
