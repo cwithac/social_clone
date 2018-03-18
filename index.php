@@ -1,6 +1,14 @@
 <?php
 include('includes/header.php');
 include('includes/classes/User.php');
+include('includes/classes/Post.php');
+
+if(isset($_POST['post'])) {
+  //if post button has been pressed ...
+  $post = new Post($con, $userLoggedIn); //New instance of Post class
+  $post->submitPost($_POST['post_text'], 'none'); //SubmitPost from Post.php, post_text from form
+}
+
  ?>
 
  <div class="user_details column">
@@ -16,7 +24,7 @@ include('includes/classes/User.php');
 
  </div>
  <div class="main_column column">
-   <form class="post_form" action="index.html" method="POST">
+   <form class="post_form" action="index.php" method="POST">
      <textarea name="post_text" id="post_text" placeholder="Thoughts?"></textarea>
      <input type="submit" name="post" id="post_button" value="POST">
      <hr>
