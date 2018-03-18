@@ -14,6 +14,13 @@ include('includes/header.php');
    </div>
 
  </div>
+ <div class="main_column column">
+   <form class="post_form" action="index.html" method="POST">
+     <textarea name="post_text" id="post_text" placeholder="Thoughts?"></textarea>
+     <input type="submit" name="post" id="post_button" value="POST">
+     <hr>
+   </form>
+ </div>
  <!-- WRAPPER BELOW CLOSE FROM header.php -->
   </div>
   </body>

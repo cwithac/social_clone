@@ -87,3 +87,43 @@ nav a:hover {
 	display: inline-table;
 	position: absolute;
 }
+
+.main_column {
+  float: right;
+  width: 70%;
+  z-index: -1;
+  min-height: 160px;
+}
+
+.post_form {
+  width: 100%;
+}
+
+.post_form textarea {
+  width: 82%;
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 5px;
+  border: 1px solid #bdc3c7;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.post_form input[type='submit'] {
+  width: 11%;
+  height: 60px;
+  border: none;
+  background-color: #27ae60;
+  color: #ecf0f1;
+  box-shadow: 2px 2px 1px #bdc3c7;
+  position: absolute;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+
+.post_form input[type='submit']:active {
+  padding: 5px 4px 4px 5px;
+  color: #FFF;
+}
