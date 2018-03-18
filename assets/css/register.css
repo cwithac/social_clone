@@ -13,7 +13,7 @@ a {
 }
 
 a:hover {
-  color: #27ae60;
+  color: #2c3e50;
 }
 
 form {
@@ -55,11 +55,11 @@ form {
   margin-bottom: 0;
   font-family: 'Sevillana', cursive;
   font-size: 250%;
-  color: #27ae60;
+  color: #2c3e50;
 }
 
 input[type='submit'] {
-  background-color: #27ae60;
+  background-color: #2c3e50;
   padding: 5px 10px;
   border: none;
   border-radius: 2px;
@@ -76,7 +76,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 input[type='text']:hover, input[type='email']:hover, input[type='password']:hover {
-  border-color: #2ecc71;
+  border-color: #2c3e50;
 }
 
 #second {

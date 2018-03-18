@@ -96,13 +96,23 @@ if(isset($_POST['register_button'])) {
         }
 
         //Generate Profile Pic (Random)
-        $rand = rand(1, 2); //Random number between 1-2
-        //**TO DO - Update to switch statement for all default images
-        if($rand == 1) {
-          $profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
-        } else {
-          $profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
-        }
+        $rand = rand(1, 4); //Random number between 1-4
+        switch($rand) {
+          case 1:
+            $profile_pic = "assets/images/profile_pics/defaults/head_belize_hole.png";
+            break;
+          case 2:
+            $profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+            break;
+          case 3:
+            $profile_pic = "assets/images/profile_pics/defaults/head_pete_river.png";
+            break;
+          case 4:
+            $profile_pic = "assets/images/profile_pics/defaults/head_wet_asphalt.png";
+            break;
+          default:
+            $profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+        };
 
         //INSERT
           //id, first_name, last_name, username, email, password, signup_date, profile_pic, num_posts, num_likes, user_closed, friend_array

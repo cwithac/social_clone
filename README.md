@@ -9,7 +9,7 @@ Technologies Used:
 - Bootstrap v3.3.7
 ```
 
-![](https://i.imgur.com/jdV9V5g.jpg)
+![](https://i.imgur.com/RGxgAuH.jpg)
 
 ### Resources
 - [Google Fonts](https://fonts.google.com/specimen/Sevillana?selection.family=Sevillana)
