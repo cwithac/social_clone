@@ -58,7 +58,7 @@ nav a:hover {
   position: relative;
   padding: 0 10px;
   width: 75%;
-  min-width: 800px;
+  min-width: 950px;
 }
 
 .column {
@@ -71,7 +71,19 @@ nav a:hover {
 }
 
 .user_details {
-  width: 250px;
-  float: left;
-  margin-bottom: 20px;
+	width: 250px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.user_details img {
+	height: 120px;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+.user_details_left_right {
+	width: 120px;
+	display: inline-table;
+	position: absolute;
 }
