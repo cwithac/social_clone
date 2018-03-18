@@ -41,19 +41,21 @@ if(isset($_POST['post'])) {
     var userLoggedIn = '<?php echo $userLoggedIn; ?>';
     $(document).ready(function() {
       $('#loading').show();
+
+      //Ajax Request
+      $.ajax({
+        url: 'includes/handlers/ajax_load_posts.php',
+        type: 'POST',
+        data: 'page=1&userLoggedIn=' + userLoggedIn,
+        cache: false,
+        success: function(data) {
+          $('#loading').hide();
+          $('.posts_area').html(data); //Returned data from AJAX
+        }
+      });
     });
 
-  //Ajax Request
-  $.ajax({
-    url: 'includes/handlers/ajax_load_posts.php',
-    type: 'POST',
-    data: 'page=1&userLoggedIn=' + userLoggedIn,
-    cache: false,
-    success: function(data) {
-      $('#loading').hide();
-      $('.posts_area').html(data); //Returned data from AJAX
-    }
-  });
+
  </script>
 
  <!-- WRAPPER BELOW CLOSE FROM header.php -->
