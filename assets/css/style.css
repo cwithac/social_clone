@@ -152,6 +152,7 @@ nav a:hover {
 #comment_iframe {
   max-height: 250px;
   width: 100%;
+  margin-top: 5px;
 }
 
 .comment_section {
@@ -193,4 +194,10 @@ nav a:hover {
 #comment_form input[type='submit']:active {
   padding: 5px 4px 4px 5px;
   color: #FFF;
+}
+
+.newsfeedPostOptions {
+  padding: 0;
+  text-decoration: none;
+  color: #3498db;
 }
