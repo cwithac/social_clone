@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <style>
+      * {
+        font-size: 14px;
+        font-family: 'Helvetica', sans-serif;
+      }
+      body {
+        background-color: #FFF;
+      }
+      form {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    </style>
     <?php
     require 'config/config.php';
     include('includes/classes/User.php');
@@ -64,18 +78,18 @@
         if($num_rows > 0) {
           //UNLIKE Options
           echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-                  <input type="submit" class="comment_like" name="unlike_button" value="Unlike">
+                  <input type="submit" class="comment_like" name="unlike_button" value="&#x2665;">
                   <div class="like_value">
-                    ' . $total_likes . ' Likes
+                    &#x2665; ' . $total_likes . '
                   </div>
                 </form>
                 ';
         } else {
           //LIKE Options
           echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-                  <input type="submit" class="comment_like" name="like_button" value="Like">
+                  <input type="submit" class="comment_like" name="like_button" value="&#x2661;">
                   <div class="like_value">
-                    ' . $total_likes . ' Likes
+                    &#x2665; ' . $total_likes . '
                   </div>
                 </form>
                 ';

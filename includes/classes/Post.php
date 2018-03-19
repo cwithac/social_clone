@@ -182,8 +182,8 @@ class Post {
                         <br>
                       </div>
                       <div class='newsfeedPostOptions'>
-                        Comments&nbsp;($comments_check_num)&nbsp;&nbsp;&nbsp;
-                        <iframe src='like.php?post_id=$id'></iframe>
+                        <iframe src='like.php?post_id=$id' scrolling='no'></iframe><br>
+                        <span class='comment_count'>Comments&nbsp;($comments_check_num)</span>
                       </div>
                     </div>
                     <div class='post_comment' id='toggleComment$id' style='display: none;'>

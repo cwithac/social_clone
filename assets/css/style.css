@@ -197,7 +197,36 @@ nav a:hover {
 }
 
 .newsfeedPostOptions {
-  padding: 0;
+  padding: 0px;
   text-decoration: none;
-  color: #3498db;
+  border:none;
+}
+
+.newsfeedPostOptions iframe {
+  border: 0px;
+	height: 17px;
+	width: 100%;
+}
+
+.comment_like {
+  background-color: transparent;
+	border: none;
+	font-size: 14px;
+	color: #c0392b;
+	padding: 0;
+	height: auto;
+	width: auto;
+	margin: 0 0 0 -7px;
+}
+
+.comment_count {
+  font-size: 12px;
+  float: right;
+}
+
+.like_value {
+  display: inline;
+  font-size: 14px;
+  float: right;
+  margin-right: 60px;
 }
