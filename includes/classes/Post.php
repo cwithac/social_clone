@@ -99,11 +99,14 @@ class Post {
               <script>
                 function toggle<?php echo $id; ?>() {
                   //Toggle show and hide for comments based on $id
-                  var element = document.getElementById('toggleComment<?php echo $id; ?>');
-                  if(element.style.display == 'block') {
-                    element.style.display = 'none';
-                  } else {
-                    element.style.display = 'block';
+                  var target = $(event.target);
+                  if(!target.is('a')) { //Excludes the name link
+                    var element = document.getElementById('toggleComment<?php echo $id; ?>');
+                    if(element.style.display == 'block') {
+                      element.style.display = 'none';
+                    } else {
+                      element.style.display = 'block';
+                    }
                   }
                 }
               </script>
