@@ -146,7 +146,10 @@
           </div>
           <?php
         } //End While
+      } else {
+        echo "<center><br><br>No comments to display.</center>";
       }
+
 
      ?>
 
