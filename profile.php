@@ -39,8 +39,17 @@ if(isset($_GET['profile_username'])) {
           if($logged_in_user_obj->isFriend($username)) {
             //If accounts are friends...
             echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
-          }
+          } else if ($logged_in_user_obj->didRecieveRequest($username)){
+            //Response to friend request option
+            echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
+          } else if ($logged_in_user_obj->didSendRequest($username)){
+            //Friend request sent from userLoggedIn to profile user
+            echo '<input type="submit" name="" class="default" value="Request Sent"><br>';
+          } else {
+            //userLoggedIn and profile user are not friends
+            echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>';
         }
+      }
        ?>
     </form>
  </div>
