@@ -102,6 +102,29 @@ class User {
     $query = mysqli_query($this->con, "INSERT INTO friend_requests VALUES('', '$user_to', '$user_from')");
   }
 
+  public function getMutualFriends($user_to_check) {
+    //Friend array of user logged in
+    $mutualFriends = 0;
+    $user_array = $this->user['friend_array'];
+    $user_array_explode = explode(',', $user_array); //Splits string into array at ','
+
+    //Friend array of user to check
+    $query = mysqli_query($this->con, "SELECT friend_array FROM users WHERE username='$user_to_check'");
+    $row = mysqli_fetch_array($query);
+    $user_to_check_array = $row['friend_array'];
+    $user_to_check_array_explode = explode(',', $user_to_check_array); //Splits string into array at ','
+
+    //Iterate through user logged in friends, $i against every $j = friends in common
+    foreach($user_array_explode as $i) {
+      foreach($user_to_check_array_explode as $j) {
+        if($i == $j && $i != '') {
+          $mutualFriends++;
+        }
+      }
+    }
+    return $mutualFriends;
+  }
+
 }// End User Class
 
 

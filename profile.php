@@ -70,6 +70,16 @@ if(isset($_GET['profile_username'])) {
 
     </form>
     <input type="submit" class="default" data-toggle="modal" data-target="#post_form" value="Say something...">
+
+    <?php
+    if($userLoggedIn != $username) {
+      //User is not on own profile
+      echo '<div class="profile_info_bottom">';
+       echo '<strong>Mutual Friends:</strong> ' . $logged_in_user_obj->getMutualFriends($username);
+       echo '</div>';
+    }
+     ?>
+
  </div>
 
  <div class="profile_main_column column">
