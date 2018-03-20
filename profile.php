@@ -11,6 +11,24 @@ if(isset($_GET['profile_username'])) {
 
     $num_friends = (substr_count($user_array['friend_array'], ',') - 1); //Splice friends array, excluding initial ',' for 0
 }
+
+  if(isset($_POST['remove_friend'])) {
+    //Remove friend button is pressed
+    $user = new User($con, $userLoggedIn);
+    $user->removeFriend($username);
+  }
+
+  if(isset($_POST['add_friend'])) {
+    //Add friend button is pressed
+    $user = new User($con, $userLoggedIn);
+    $user->sendRequest($username);
+  }
+
+  if(isset($_POST['respond_request'])) {
+    //Respond to request redirect
+    header('Location: requests.php');
+  }
+
  ?>
 
 <style>
@@ -26,7 +44,7 @@ if(isset($_GET['profile_username'])) {
      <p><?php echo "<strong>Likes:</strong> " . $user_array['num_likes'];?></p>
      <p><?php echo "<strong>Friends:</strong> " . $num_friends;?></p>
    </div>
-    <form action=<?php echo $username ?>>
+    <form action=<?php echo $username ?> method="POST">
       <?php
         $profile_user_obj = new User($con, $username);
         if($profile_user_obj->isClosed()) {
