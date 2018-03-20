@@ -33,6 +33,14 @@ if(isset($_GET['profile_username'])) {
           //if user's profile is closed...
           header('Location: user_closed.php');
         }
+        $logged_in_user_obj = new User($con, $userLoggedIn);
+        if($userLoggedIn != $username) {
+          //If the logged in user is not the profile in view ...
+          if($logged_in_user_obj->isFriend($username)) {
+            //If accounts are friends...
+            echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
+          }
+        }
        ?>
     </form>
  </div>
