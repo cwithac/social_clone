@@ -265,3 +265,31 @@ nav a:hover {
   margin: 0 0 0 20px;
   word-wrap: break-word;
 }
+
+.danger {
+  background-color: #c0392b;
+}
+
+.warning {
+  background-color: #f1c40f;
+}
+
+.default {
+  background-color: #3498db;
+}
+
+.success {
+  background-color: #27ae60;
+}
+
+.info {
+  background-color: #bdc3c7;
+}
+
+.profile_left input[type="submit"] {
+  width: 90%;
+  height: 30px;
+  border: none;
+  margin: 7px 0 0 7px;
+  color: #FFF;
+}
