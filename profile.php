@@ -99,7 +99,7 @@ if(isset($_GET['profile_username'])) {
 
        <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         <button type="button" class="btn btn-primary">Post</button>
+         <button type="button" name="post_button" id="submit_profile_post" class="btn btn-primary">Post</button>
        </div>
      </div>
    </div>

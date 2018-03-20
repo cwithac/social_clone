@@ -63,9 +63,9 @@ class Post {
           if($row['user_to'] == 'none') {
             $user_to  = '';
           } else {
-            $user_to_obj = new User($con, $row['user_to']); //New instance of user class
+            $user_to_obj = new User($this->con, $row['user_to']); //New instance of user class
             $user_to_name = $user_to_obj->getFirstAndLastName(); //Gets first and last name of user
-            $user_to = "<a href='" . $row['user_to'] . "'>" . $user_to_name . "</a>"; //Return link to the profile page
+            $user_to = "to <a href='" . $row['user_to'] ."'>" . $user_to_name . "</a>"; //Return link to the profile page
           }
 
           //Check if user who posted has a closed accounts (posts will not show)
