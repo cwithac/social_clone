@@ -1,5 +1,7 @@
 <?php
 include('includes/header.php');
+include('includes/classes/User.php');
+include('includes/classes/Post.php');
 
 if(isset($_GET['profile_username'])) {
   //Username from .htaccess URL parameter
@@ -24,6 +26,15 @@ if(isset($_GET['profile_username'])) {
      <p><?php echo "<strong>Likes:</strong> " . $user_array['num_likes'];?></p>
      <p><?php echo "<strong>Friends:</strong> " . $num_friends;?></p>
    </div>
+    <form action=<?php echo $username ?>>
+      <?php
+        $profile_user_obj = new User($con, $username);
+        if($profile_user_obj->isClosed()) {
+          //if user's profile is closed...
+          header('Location: user_closed.php');
+        }
+       ?>
+    </form>
  </div>
 
  <div class="main_column column">
