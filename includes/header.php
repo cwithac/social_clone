@@ -45,7 +45,7 @@ if(isset($_SESSION['username'])) {
         <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
+        <a href="requests.php"><i class="fa fa-users" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a>
         <a href="includes/handlers/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
       </nav>
