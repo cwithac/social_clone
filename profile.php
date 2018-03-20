@@ -72,8 +72,11 @@ if(isset($_GET['profile_username'])) {
     <input type="submit" class="default" data-toggle="modal" data-target="#post_form" value="Say something...">
  </div>
 
- <div class="main_column column">
-   <?php echo $username ?>
+ <div class="profile_main_column column">
+   <div class="posts_area">
+
+   </div>
+   <img src="assets/images/icons/loading.gif" id="loading" alt="loading">
  </div>
 
  <!-- Modal -->
@@ -104,6 +107,56 @@ if(isset($_GET['profile_username'])) {
      </div>
    </div>
  </div>
+
+<!-- INIFINTE LOADING -->
+ <script>
+ //Loading Icon
+    var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+    var profileUsername = '<?php echo $username; ?>';
+    $(document).ready(function() {
+      $('#loading').show();
+
+      //Ajax Request
+      $.ajax({
+        url: 'includes/handlers/ajax_load_profile_posts.php',
+        type: 'POST',
+        data: 'page=1&userLoggedIn=' + userLoggedIn + '&profileUsername=' + profileUsername,
+        cache: false,
+        success: function(data) {
+          $('#loading').hide();
+          $('.posts_area').html(data); //Returned data from AJAX
+        }
+      });
+
+      $(window).scroll(function() {
+        var height = $('.posts_area').height; //Height of posts container div
+        var scroll_top = $(this).scrollTop(); //Top of page at any time
+        var page = $('.posts_area').find('.nextPage').val();
+        var noMorePosts = $('.posts_area').find('.noMorePosts').val();
+
+          if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
+            //If height scrolled is top of window plus the height of the window and more posts available
+            $('#loading').show();
+            //Ajax Request
+            var ajaxReq = $.ajax({
+              url: 'includes/handlers/ajax_load_profile_posts.php',
+              type: 'POST',
+              data: 'page=' + page + '&userLoggedIn=' + userLoggedIn + '&profileUsername=' + profileUsername,
+              cache: false,
+              success: function(data) {
+                $('.posts_area').find('.nextPage').remove(); //Removes current next page
+                $('.posts_area').find('.noMorePosts').remove();
+                $('#loading').hide();
+                $('.posts_area').append(data); //Returned data from AJAX
+              }
+            });
+          } //End if statement
+          return false;
+      }); //End $(window).scroll(function()
+    }); //Document Ready Close
+
+
+ </script>
 
  <!-- WRAPPER BELOW CLOSE FROM header.php -->
   </div>

@@ -34,6 +34,7 @@ if(isset($_POST['post'])) {
     <img src="assets/images/icons/loading.gif" id="loading" alt="loading">
  </div>
 
+<!-- INFINITE LOADING -->
  <script>
  //Loading Icon
     var userLoggedIn = '<?php echo $userLoggedIn; ?>';
