@@ -302,3 +302,16 @@ nav a:hover {
   box-shadow: 2px 2px 1px #bdc3c7;
   color: #FFF;
 }
+
+.delete_button {
+  float: right;
+  margin: 5px 0;
+  background-color: #FFF;
+  color: #bdc3c7;
+  padding: 5px;
+  border: none;
+}
+
+.delete_button:hover {
+  color: #c0392b;
+}

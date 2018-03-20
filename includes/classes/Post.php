@@ -90,7 +90,7 @@ class Post {
 
           if($userLoggedIn == $added_by) {
             //own post
-            $delete_button = "<button class='delete_button btn-danger' id='post$id'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
+            $delete_button = "<button class='delete_button' id='post$id'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
           } else {
             $delete_button = '';
           }
@@ -180,7 +180,7 @@ class Post {
                         <img src='$profile_pic' width='50'>
                       </div>
                       <div class='posted_by' style='color:#bdc3c7;'>
-                        <a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;<span class='time_message'>$time_message</span>
+                        <a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;<span class='time_message'>$time_message</span><br>
                         $delete_button
                       </div>
                       <div id='post_body'>
