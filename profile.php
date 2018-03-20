@@ -10,7 +10,13 @@ if(isset($_GET['profile_username'])) {
     $num_friends = (substr_count($user_array['friend_array'], ',') - 1); //Splice friends array, excluding initial ',' for 0
 }
  ?>
-
+ 
+<style>
+  .wrapper {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+</style>
  <div class="profile_left">
    <img src="<?php echo $user_array['profile_pic']; ?> " alt="user_profile_pic">
    <div class="profile_info">
