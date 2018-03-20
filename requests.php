@@ -40,8 +40,8 @@ include('includes/header.php');
           ?>
 
           <form action="requests.php" method="POST">
-            <input type="submit" name="accept_request<?php echo $user_from; ?>" id="accept-button" value="Accept Request">
-            <input type="submit" name="ignore_request<?php echo $user_from; ?>" id="ignore-button" value="Ignore Request">
+            <input type="submit" name="accept_request<?php echo $user_from; ?>" id="accept-button" class="success" value="Accept Request">
+            <input type="submit" name="ignore_request<?php echo $user_from; ?>" id="ignore-button" class="warning" value="Ignore Request">
           </form>
 
           <?php

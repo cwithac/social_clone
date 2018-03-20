@@ -293,3 +293,12 @@ nav a:hover {
   margin: 7px 0 0 7px;
   color: #FFF;
 }
+
+#accept-button, #ignore-button {
+  width: 20%;
+  height: 25px;
+  border: none;
+  margin: 5px 10px 0 0;
+  box-shadow: 2px 2px 1px #bdc3c7;
+  color: #FFF;
+}
