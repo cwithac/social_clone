@@ -6,8 +6,9 @@ Technologies Used:
 - HTML
 - MD5 Password Encryption
 - jQuery
-- Bootstrap v3.3.7
 - AJAX
+- Bootstrap v3.3.7
+- Bootbox 4.4.0
 ```
 
 ![](https://i.imgur.com/RGxgAuH.jpg)
