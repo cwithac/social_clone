@@ -26,18 +26,24 @@ if(isset($_SESSION['username'])) {
     <link href="https://fonts.googleapis.com/css?family=Sevillana" rel="stylesheet">
     <!-- FONT AWESOME v4.7.0 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JCROP -->
+    <link rel="stylesheet" href="assets/css/jquery.Jcrop.css" type="text/css" />
+
 
     <!-- JQUERY -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- JCROP -->
+    <script src="assets/js/jquery.Jcrop.js"></script>
+    <script src="assets/js/jcrop_bits.js"></script>
     <!-- BOOTSTRAP JS v3.3.7-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- BOOTBOX 4.4.0 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js" charset="utf-8"></script>
     <!-- SCRIPT JS -->
     <script src="assets/js/script.js" charset="utf-8"></script>
+
+
+
 
   </head>
   <body>
