@@ -248,7 +248,7 @@ nav a:hover {
 .profile_left img {
   min-width: 80px;
   width: 55%;
-  margin: 10px;
+  margin: 10px 21% 10px 21%;
   border: 5px solid #bdc3c7;
   border-radius: 100px;
 }
@@ -258,6 +258,7 @@ nav a:hover {
   background-color: #34495e;
   width: 100%;
   padding: 10px 0 10px 0;
+  line-height: 1.5;
 }
 
 .profile_info p {
