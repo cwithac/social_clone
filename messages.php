@@ -59,8 +59,7 @@ if(isset($_POST['post_message'])) {
 		?>
 
 
-
-		<div class="message_post">
+    <div class="message_post">
 			<form action="" method="POST">
 				<?php
 				if($user_to == "new") {
@@ -72,7 +71,7 @@ if(isset($_POST['post_message'])) {
 					echo "<div class='results'></div>";
 				}
 				else {
-					echo "<textarea name='message_body' id='message_textarea' placeholder='Write something ...'></textarea>";
+					echo "<textarea name='message_body' id='message_textarea' placeholder='Write your message ...'></textarea>";
 					echo "<input type='submit' name='post_message' class='info' id='message_submit' value='Send'>";
 				}
 
