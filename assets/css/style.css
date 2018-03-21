@@ -326,3 +326,46 @@ nav a:hover {
 .profile_info_bottom {
   margin: 10px 0 0 17px;
 }
+
+#message_textarea {
+  width: 80%;
+  margin-right: 10px;
+  border: 1px solid #bdc3c7;
+}
+
+.message_post input[type='submit'] {
+  height: 35px;
+  width: 120px;
+  border: none;
+  margin: 0;
+  color: #000;
+  position: absolute;
+}
+
+.loaded_messages {
+  height: 65%;
+  min-height: 300px;
+  max-height: 400px;
+  padding: 2%;
+  overflow: scroll;
+}
+
+.message {
+  border: 1px solid #bdc3c7;
+  padding: 5px 10px;
+  display: inline-block;
+  color: #ecf0f1;
+  border-radius: 5px;
+}
+
+.message#sent {
+  background-color: #95a5a6;
+  border-color: #7f8c8d;
+  float: right;
+}
+
+.message#received {
+  background-color: #3498db;
+  border-color: #2980b9;
+  float: left;
+}
