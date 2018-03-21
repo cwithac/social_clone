@@ -88,12 +88,13 @@ if(isset($_POST['post_message'])) {
 
     </script>
 
-    <div class="user_details column" id="conversations">
-      <h4>Conversations</h4>
-      <div class="loaded_conversations">
-        <?php echo $message_obj->getConvos(); ?>
-      </div>
-      <br>
-      <a href="messages.php?u=new">New Message</a>
-    </div>
+</div>
+
+<div class="user_details column" id="conversations">
+  <h4>Conversations</h4>
+  <div class="loaded_conversations">
+    <?php echo $message_obj->getConvos(); ?>
+  </div>
+  <br>
+  <a href="messages.php?u=new">New Message</a>
 </div>
