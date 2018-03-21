@@ -22,7 +22,7 @@ if($query != '') {
   while($row = mysqli_fetch_array($usersReturned)) {
     $user = new User($con, $userLoggedIn);
     if($row['username'] != $userLoggedIn) {
-      $mutual_friends = $user->getMutualFriends($row['username']) . " friends in common.";
+      $mutual_friends = $user->getMutualFriends($row['username']) . " friends in common";
     } else {
       $mutual_friends = '';
     }
@@ -37,7 +37,7 @@ if($query != '') {
 						<div class='liveSearchText'>
 							".$row['first_name'] . " " . $row['last_name']. "
 							<p style='margin: 0;'>". $row['username'] . "</p>
-							<p id='grey'>".$mutual_friends . "</p>
+							<p id='info'>".$mutual_friends . "</p>
 						</div>
 					</a>
 				</div>";
