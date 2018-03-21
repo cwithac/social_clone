@@ -369,3 +369,28 @@ nav a:hover {
   border-color: #2980b9;
   float: left;
 }
+
+.loaded_conversations {
+  max-height: 302px;
+  overflow: scroll;
+  font-size: 12px;
+}
+
+.loaded_conversations > a {
+  text-decoration: none;
+}
+
+.user_found_messages {
+  border-bottom: 1px solid #bdc3c7;
+  padding: 8px 8px 10px 8px;
+  color: #000;
+}
+
+.user_found_messages:hover {
+  background-color: #ecf0f1;
+}
+
+.timestamp_smaller {
+  text-size: 10px;
+  color: #bdc3c7;
+}

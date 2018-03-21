@@ -141,10 +141,10 @@ class Message {
       $split = $split[0] . $dots;
 
       $return_string .= "<a href='messages.php?u=$username'> <div class='user_found_messages'>
-                        <img src='" . $user_found_obj->getProfilePic() . "' style='border-radius: 5px; margin-right:5px'>"
-                        . $user_found_obj->getFirstAndLastName() . "
+                        <img src='" . $user_found_obj->getProfilePic() . "' style='height: 25px; border-radius: 50px; margin-right:5px; float:left'><strong>"
+                        . $user_found_obj->getFirstAndLastName() . "</strong><br>
                         <span class='timestamp_smaller' id='info'>" . $latest_message_details[2] . "</span>
-                        <p id='info' style='margin:0'>" . $latest_message_details[0] . $split . "</p></div></a>";
+                        <p id='info' style='margin:0'><em>" . $latest_message_details[0] . "</em>" . $split . "</p></div></a>";
     }
     return $return_string;
   }
