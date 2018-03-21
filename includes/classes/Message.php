@@ -30,6 +30,15 @@ class Message {
 
   }
 
+  public function sendMessage($user_to, $body, $date) {
+    if($body != '') {
+      //Body is not empty
+      $userLoggedIn = $this->user_obj->getUsername();
+      //Messages Table: id, user_to, user_from, body, date, opened, viewed, deleted
+      $query = mysqli_query($this->con, "INSERT INTO messages VALUES('', '$user_to', '$userLoggedIn', '$body', '$date', 'no', 'no', 'no')");
+    }
+  }
+
 }// End  Class
 
 
