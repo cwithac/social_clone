@@ -80,4 +80,11 @@ if(isset($_POST['post_message'])) {
 			</form>
 
 		</div>
+
+    <script>
+
+      var div = document.getElementById('scroll_messages');
+        div.scrollTop = div.scrollHeight;
+
+    </script>
 </div>
