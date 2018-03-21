@@ -48,7 +48,7 @@ if(isset($_POST['post_message'])) {
         echo $message_obj->getMessages($user_to);
       echo "</div>";
     } else {
-      echo "<h4>New Message</h4>"
+      echo "<h4>New Message</h4>";
     }
    ?>
   <div class="message_post">

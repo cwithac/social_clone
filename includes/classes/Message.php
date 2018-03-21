@@ -44,8 +44,18 @@ class Message {
     $data = ""; //String to be returned
     $query = mysqli_query($this->con, "UPDATE messages SET opened='yes' WHERE user_to='$userLoggedIn' AND user_from='$otherUser'"); //All opened messages
 
-    $get_messages_query = mysqli_query($this->con, "SELECT * FROM messages WHERE (user_to='$userLoggedIn' AND user_from='$otherUser') OR (user_from='$userLoggedIn' AND user_too='$otherUser')"); //Both sides of messages
-  }
+    	$get_messages_query = mysqli_query($this->con, "SELECT * FROM messages WHERE (user_to='$userLoggedIn' AND user_from='$otherUser') OR (user_from='$userLoggedIn' AND user_to='$otherUser')"); //Both sides of messages
+
+      while($row = mysqli_fetch_array($get_messages_query)) {
+  			$user_to = $row['user_to'];
+  			$user_from = $row['user_from'];
+  			$body = $row['body'];
+
+  			$div_top = ($user_to == $userLoggedIn) ? "<div class='message' id='sent'>" : "<div class='message' id='received'>";
+  			$data = $data . $div_top . $body . "</div><br><br>";
+  		}
+  		return $data;
+  	}
 
 }// End  Class
 
