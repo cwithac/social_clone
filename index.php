@@ -19,8 +19,8 @@ if(isset($_POST['post'])) {
      <?php echo "Posts: " . $user['num_posts']. "<br>";
      echo "Likes: " . $user['num_likes']; ?>
    </div>
-
  </div>
+ 
  <div class="main_column column">
    <form class="post_form" action="index.php" method="POST">
      <textarea name="post_text" id="post_text" placeholder="Thoughts?"></textarea>
