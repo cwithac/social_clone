@@ -19,10 +19,9 @@ nav a {
   padding: 3px;
 }
 
-nav a:hover {
+nav a:hover, nav a:after {
   border-bottom: 1px solid #bdc3c7;
   color: #ecf0f1;
-  text-decoration: none;
 }
 
 .top_bar {

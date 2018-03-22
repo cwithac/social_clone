@@ -66,24 +66,24 @@ if(isset($_SESSION['username'])) {
 
          ?>
         <a id="user-fn" href="<?php echo $userLoggedIn; ?>"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
-        <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
-        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')"><i class="fa fa-envelope" aria-hidden="true"></i>
+        <a href="#" style="text-decoration: none"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <a href="javascript:void(0);" style="text-decoration: none" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')"><i class="fa fa-envelope" aria-hidden="true"></i>
           <?php
             if($num_messages > 0) {
               echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
             }
           ?>
         </a>
-        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')"><i class="fa fa-bell" aria-hidden="true"></i>
+        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')" style="text-decoration: none"><i class="fa fa-bell" aria-hidden="true"></i>
           <?php
             if($num_notifications > 0) {
               echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
             }
           ?>
         </a>
-        <a href="requests.php"><i class="fa fa-users" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a>
-        <a href="includes/handlers/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        <a href="requests.php" style="text-decoration: none"><i class="fa fa-users" aria-hidden="true"></i></a>
+        <a href="#" style="text-decoration: none"><i class="fa fa-cogs" aria-hidden="true"></i></a>
+        <a href="includes/handlers/logout.php" style="text-decoration: none"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
       </nav>
       <div class="dropdown_data_window" style="height:0px; border:none;"></div>
         <input type="hidden" id="dropdown_data_type" value="">
