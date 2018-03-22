@@ -28,6 +28,12 @@ class Post {
           $query = mysqli_query($this->con, "INSERT INTO posts VALUES('', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no', '0')"); //Insert into DB
           $returned_id = mysqli_insert_id($this->con); //Returns the id of the post just submitted
 
+          //Notifications
+          if($user_to != 'none') {
+            $notification = new Notification($this->con, $userLoggedIn);
+            $notification->insertNotification($returned_id, $user_to, 'profile_post');
+          }
+
           //Update Post Count for User
           $num_posts = $this->user_obj->getNumPosts(); //Get number of posts from User.php
           $num_posts++;
