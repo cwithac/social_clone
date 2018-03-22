@@ -245,6 +245,13 @@ nav a:hover {
   margin-right: 20px;
 }
 
+.profile_left h6 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
 .profile_left img {
   min-width: 80px;
   width: 55%;

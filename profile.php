@@ -52,6 +52,7 @@ if(isset($_POST['post_message'])) {
   }
 </style>
  <div class="profile_left">
+   <h6><?php echo $user_array['first_name'] . ' ' . $user_array['last_name']; ?></h6>
    <img src="<?php echo $user_array['profile_pic']; ?> " alt="user_profile_pic">
    <div class="profile_info">
      <p><?php echo "<strong>Posts:</strong> " . $user_array['num_posts'];?></p>
