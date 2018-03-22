@@ -64,6 +64,10 @@ if(isset($_SESSION['username'])) {
           $notifications = new Notification($con, $userLoggedIn);
           $num_notifications = $notifications->getUnreadNumber();
 
+          //Friend request notifications
+          $user_obj = new User($con, $userLoggedIn);
+          $num_requests = $user_obj->getNumberOfFriendRequests();
+
          ?>
         <a id="user-fn" href="<?php echo $userLoggedIn; ?>"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
         <a href="#" style="text-decoration: none"><i class="fa fa-home" aria-hidden="true"></i></a>
@@ -81,7 +85,13 @@ if(isset($_SESSION['username'])) {
             }
           ?>
         </a>
-        <a href="requests.php" style="text-decoration: none"><i class="fa fa-users" aria-hidden="true"></i></a>
+        <a href="requests.php" style="text-decoration: none"><i class="fa fa-users" aria-hidden="true"></i>
+          <?php
+            if($num_requests > 0) {
+              echo '<span class="notification_badge" id="unread_request">' . $num_requests . '</span>';
+            }
+          ?>
+        </a>
         <a href="#" style="text-decoration: none"><i class="fa fa-cogs" aria-hidden="true"></i></a>
         <a href="includes/handlers/logout.php" style="text-decoration: none"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
       </nav>

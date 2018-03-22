@@ -551,7 +551,6 @@ class Post {
                       <iframe src='comment_frame.php?post_id=$id' id='comment_iframe' frameborder=0></iframe>
                     </div>
                     <hr>";
-
           ?>
           <script>
             $(document).ready(function() {
