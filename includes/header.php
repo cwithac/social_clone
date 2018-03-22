@@ -65,5 +65,46 @@ if(isset($_SESSION['username'])) {
         <input type="hidden" id="dropdown_data_type" value="">
       </div>
     </div>
+
+    <!-- INFINITE LOADING -->
+     <script>
+
+        var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+        $(document).ready(function() {
+
+          $('.dropdown_data_window').scroll(function() {
+            var inner_height = $('.dropdown_data_window').innerHeight;
+            var scroll_top = $('.dropdown_data_window').scrollTop(); //Top of page at any time
+            var page = $('.dropdown_data_window').find('.nextPageDropdownData').val();
+            var noMoreData = $('.dropdown_data_window').find('.noMoreDropdownData').val();
+
+              if ((scroll_top + inner_height >= $('.dropdown_data_window')[0].scrollHeight) && noMoreData == 'false') {
+                var pageName;
+                var type = $('#dropdown_data_type').val();
+                  if(type == 'notification') {
+                    pageName = "ajax_load_notifications.php";
+                  } else if (type == 'message') {
+                    pageName = "ajax_load_messages.php";
+                  }
+                //Ajax Request
+                var ajaxReq = $.ajax({
+                  url: 'includes/handlers/' + pageName,
+                  type: 'POST',
+                  data: 'page=' + page + '&userLoggedIn=' + userLoggedIn,
+                  cache: false,
+                  success: function(data) {
+                    $('.dropdown_data_window').find('.nextPageDropdownData').remove(); //Removes current next page
+                    $('.dropdown_data_window').find('.noMoreDropdownData').remove();
+                    $('.dropdown_data_window').append(data); //Returned data from AJAX
+                  }
+                });
+              } //End if statement
+              return false;
+          }); //End $(window).scroll(function()
+        }); //Document Ready Close
+
+
+     </script>
+
     <div class="wrapper">
       <!-- .wrapper CLOSING DIV TAG IN index.php -->
