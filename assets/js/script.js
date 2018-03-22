@@ -40,7 +40,7 @@ function getDropdownData(user, type) {
       cache: false,
       success: function(response) {
         $(".dropdown_data_window").html(response);
-        $(".dropdown_data_window").css({"padding":"0px", "height": "280px"});
+        $(".dropdown_data_window").css({"padding" : "0px", "height": "280px", "border" : "2px solid #95a5a6"});
         $(".dropdown_data_type").val(type);
       }
     });

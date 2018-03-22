@@ -441,3 +441,16 @@ nav a:hover {
 .tab-content {
   margin-top: 15px;
 }
+
+.dropdown_data_window {
+    background-color: #fff;
+    border: 2px solid #95a5a6;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    width: 300px;
+    position: absolute;
+    right: 10px;
+    top: 45px;
+    overflow: scroll;
+    box-shadow: 2px 2px 1px #bdc3c7;
+}
