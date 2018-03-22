@@ -53,9 +53,22 @@ if(isset($_SESSION['username'])) {
         <a href="index.php">Social</a>
       </div>
       <nav>
+        <?php
+
+          //Unread messages
+          $messages = new Message($con, $userLoggedIn);
+          $num_messages = $messages->getUnreadNumber();
+
+         ?>
         <a id="user-fn" href="<?php echo $userLoggedIn; ?>"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
         <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
-        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')"><i class="fa fa-envelope" aria-hidden="true"></i>
+          <?php
+            if($num_messages > 0) {
+              echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
+            }
+          ?>
+        </a>
         <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
         <a href="requests.php"><i class="fa fa-users" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a>
