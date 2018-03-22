@@ -476,3 +476,8 @@ nav a:hover {
   left: 15;
   top: -5;
 }
+
+.resultDisplayNotification {
+  height: 45px;
+  color: #000;
+}

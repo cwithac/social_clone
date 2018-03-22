@@ -106,11 +106,13 @@ class Notification {
 			$style = ($row['opened'] == 'no') ? "background-color: #3498db" : "";
 
 			$return_string .= "<a href='" . $row['link'] . "'>
+														<div class='resultDisplay resultDisplayNotification' style='" . $style . "'>
 														<div class='notificationsProfilePic'>
-															<img src='" . $user_data['profile_pic'] . "'
+															<img src='" . $user_data['profile_pic'] . "' style='height: 25px; border-radius: 50px; margin-right:5px; float:left'>
 														</div>
-														<p class='timestamp_smaller' id='info'><em>" . $time_message . "</em></p>
+														<p class='timestamp_smaller' id='info' style='margin: 0'><em>" . $time_message . "</em></p>
 														" . $row['message'] . "
+														</div>
 												</a>";
 		}
 		//If loaded...
