@@ -430,3 +430,7 @@ nav a:hover {
 	color: #bdc3c7;
   font-style: italic;
 }
+
+.tab-content {
+  margin-top: 15px;
+}
