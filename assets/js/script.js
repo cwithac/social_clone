@@ -22,8 +22,8 @@ function getUsers(value, user) {
   });
 };
 
-//NAV BAR dropdown menu 
-function getDropdownData(username, type) {
+//NAV BAR dropdown menu
+function getDropdownData(user, type) {
   if($(".dropdown_data_window").css("height") == "0px") {
     var pageName;
     if (type == "notification") {
@@ -36,7 +36,7 @@ function getDropdownData(username, type) {
     var ajaxreq = $.ajax({
       url: "includes/handlers/" + pageName,
       type: "POST",
-      data: "page=1&user=" + user,
+      data: "page=1&userLoggedIn=" + user,
       cache: false,
       success: function(response) {
         $(".dropdown_data_window").html(response);
