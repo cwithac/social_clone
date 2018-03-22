@@ -368,13 +368,13 @@ nav a:hover {
 .message#sent {
   background-color: #95a5a6;
   border-color: #7f8c8d;
-  float: right;
+  /* float: right; */
 }
 
 .message#received {
   background-color: #3498db;
   border-color: #2980b9;
-  float: left;
+  /* float: left; */
 }
 
 .loaded_conversations {
