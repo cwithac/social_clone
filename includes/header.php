@@ -55,7 +55,7 @@ if(isset($_SESSION['username'])) {
       <nav>
         <a id="user-fn" href="<?php echo $userLoggedIn; ?>"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
         <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
-        <a href="javascript:void(0);" onclick="getDropdownData(<?php echo $userLoggedIn; ?>, 'message')"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
         <a href="requests.php"><i class="fa fa-users" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a>
