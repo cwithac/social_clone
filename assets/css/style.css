@@ -444,7 +444,9 @@ nav a:hover {
 
 .dropdown_data_window {
     background-color: #fff;
-    border: 2px solid #95a5a6;
+    border-left: 1px solid #95a5a6;
+    border-right: 1px solid #95a5a6;
+    border-bottom: 1px solid #95a5a6;
     border-radius: 0 0 8px 8px;
     border-top: none;
     width: 300px;
@@ -453,4 +455,24 @@ nav a:hover {
     top: 45px;
     overflow: scroll;
     box-shadow: 2px 2px 1px #bdc3c7;
+}
+
+.dropdown_data_window a {
+    text-decoration: none;
+}
+
+.notification_badge {
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: #FFF;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #e74c3c;
+  border-radius: 10px;
+  position: absolute;
+  left: 15;
+  top: -5;
 }
