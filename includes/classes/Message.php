@@ -197,11 +197,17 @@ class Message {
 			$split = str_split($latest_message_details[1], 12);
 			$split = $split[0] . $dots;
 
-			$return_string .= "<a href='messages.php?u=$username'> <div class='user_found_messages'>
+			$return_string .= "<a href='messages.php?u=$username'> <div style='" . $style ."' class='user_found_messages'>
 												<img src='" . $user_found_obj->getProfilePic() . "' style='height: 25px; border-radius: 50px; margin-right:5px; float:left'><strong>"
 												. $user_found_obj->getFirstAndLastName() . "</strong><br>
 												<span class='timestamp_smaller' id='info'>" . $latest_message_details[2] . "</span>
 												<p id='info' style='margin:0'><em>" . $latest_message_details[0] . "</em>" . $split . "</p></div></a>";
+		}
+		//If posts were loaded...
+		if($count > $limit) {
+			$return_string .= "<input type='hidden' class='nextPageDropdownData' value='" . ($page + 1) . "'><input type='hidden' class='noMoreDropdownData' value='false'";
+		} else {
+			$return_string .= "<input type='hidden' class='noMoreDropdownData' value='true'><p style='text-align: center'>No more messages to load.</p>";
 		}
 		return $return_string;
 	}
