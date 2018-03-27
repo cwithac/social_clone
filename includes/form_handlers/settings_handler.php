@@ -53,4 +53,9 @@ if(isset($_POST['update_password'])) {
 } else {
   $password_message = '';
 }
+
+//CLOSE ACCOUNT
+if(isset($_POST['close_account'])) {
+  header('Location: close_account.php');
+}
  ?>
