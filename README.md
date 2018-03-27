@@ -2,7 +2,7 @@
 
 ```
 Technologies Used:
-- PHP
+- PHP/XAMPP
 - HTML
 - MD5 Password Encryption
 - jQuery
@@ -16,6 +16,7 @@ Upcoming Features:
 - Additional Styling/Cleanup + Additional Faker Users
 - Post Content Embed (images, videos)
 - Additional user feedback
+- Hosting
 ```
 
 ![](https://i.imgur.com/RGxgAuH.jpg)
