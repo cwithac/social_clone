@@ -11,7 +11,16 @@ Technologies Used:
 - Bootbox 4.4.0
 ```
 
+```
+Upcoming Features:
+- Additional Styling/Cleanup + Additional Faker Users
+- Post Content Embed (images, videos)
+- Additional user feedback
+```
+
 ![](https://i.imgur.com/RGxgAuH.jpg)
+
+![](https://i.imgur.com/Jahor42.png)
 
 ### Resources
 - [Google Fonts](https://fonts.google.com/specimen/Sevillana?selection.family=Sevillana)
