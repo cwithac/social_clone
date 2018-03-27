@@ -481,3 +481,30 @@ nav a:hover, nav a:after {
   padding-bottom: 10px;
   color: #000;
 }
+
+.search {
+  margin: 10px 0 0 15%;
+}
+
+.search #search_text_input {
+  border: none;
+  float: left;
+  height: 25px;
+  outline: 0;
+  width: 100px;
+  padding: 5px;
+}
+
+.button_holder {
+  background-color: #FFF;
+  border-right: thin solid #bdc3c7;
+  cursor: pointer;
+  float: left;
+  height: 25px;
+  text-align: center;
+}
+
+.button_holder img {
+  margin-top: 3px;
+  width: 20px;
+}
