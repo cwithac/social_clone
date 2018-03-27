@@ -4,6 +4,10 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 nav {
   float: right;
   right: 1px;
