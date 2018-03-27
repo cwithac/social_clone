@@ -84,7 +84,7 @@ if(isset($_SESSION['username'])) {
 
          ?>
         <a id="user-fn" href="<?php echo $userLoggedIn; ?>"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
-        <a href="#" style="text-decoration: none"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <a href="index.php" style="text-decoration: none"><i class="fa fa-home" aria-hidden="true"></i></a>
         <a href="javascript:void(0);" style="text-decoration: none" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')"><i class="fa fa-envelope" aria-hidden="true"></i>
           <?php
             if($num_messages > 0) {
