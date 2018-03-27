@@ -83,6 +83,7 @@ if(isset($_SESSION['username'])) {
           $num_requests = $user_obj->getNumberOfFriendRequests();
 
          ?>
+         <!-- NAVIGATION LINKS -->
         <a id="user-fn" href="<?php echo $userLoggedIn; ?>"><?php echo 'Hi, ' . $user['first_name'] . '!'; ?></a>
         <a href="index.php" style="text-decoration: none"><i class="fa fa-home" aria-hidden="true"></i></a>
         <a href="javascript:void(0);" style="text-decoration: none" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')"><i class="fa fa-envelope" aria-hidden="true"></i>
@@ -106,7 +107,7 @@ if(isset($_SESSION['username'])) {
             }
           ?>
         </a>
-        <a href="#" style="text-decoration: none"><i class="fa fa-cogs" aria-hidden="true"></i></a>
+        <a href="settings.php" style="text-decoration: none"><i class="fa fa-cogs" aria-hidden="true"></i></a>
         <a href="includes/handlers/logout.php" style="text-decoration: none"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
       </nav>
       <div class="dropdown_data_window" style="height:0px; border:none;"></div>
