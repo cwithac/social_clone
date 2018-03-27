@@ -30,16 +30,16 @@ if($query != '') {
       $mutual_friends = '';
     }
 
-    echo "<div class='resultsDisplay'>
-            <a href='" . $row['username'] . "' style='color: #000>
-              <div class='liveSearchProfilePic'>
-                <img src='" . $row['profile_pic'] . "'>
-              </div>
+    echo "<div class='resultDisplay'>
+            <div class='liveSearchProfilePic'>
+              <img src='" . $row['profile_pic'] . "'>
+            </div>
+            <a href='" . $row['username'] . "'>
               <div class='liveSearchText'>
                 " . $row['first_name'] . ' ' . $row['last_name'] . "
                 <p id='grey'>" . $mutual_friends . " </p>
               </div>
-            </a>'
+            </a>
           </div>";
   };
 }
