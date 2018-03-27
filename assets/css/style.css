@@ -493,6 +493,7 @@ nav a:hover, nav a:after {
   outline: 0;
   width: 100px;
   padding: 5px;
+  color: #000;
 }
 
 .button_holder {

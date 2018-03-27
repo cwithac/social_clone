@@ -14,6 +14,22 @@ $(document).ready(function() {
       }
     });
   });
+
+//Search clickable functionality
+  //Expand searchbar
+  $('#search_text_input').focus(function() {
+    if(window.matchMedia("(min-width: 800px)").matches) {
+      //If the window width > 800px
+      $(this).animate({
+        width: '250px'
+      }, 500);
+    }
+  });
+
+  $('.button_holder').on('click', function() {
+    document.search_form.submit();
+  });
+
 }); //End Document Ready
 
 function getUsers(value, user) {
