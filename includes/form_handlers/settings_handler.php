@@ -47,8 +47,10 @@ if(isset($_POST['update_password'])) {
     } else {
       $password_message = 'New passwords do not match.<br>';
     }
+  } else {
+    $password_message = 'Old password not found.<br>';
   }
 } else {
-  $password_message = 'Old password not found.<br>';
+  $password_message = '';
 }
  ?>
