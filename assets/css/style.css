@@ -569,3 +569,38 @@ nav a:hover, nav a:after {
 #search_hr {
 	margin-bottom: 0px;
 }
+
+#small_profile_pics {
+  height: 50px;
+  margin: 5px;
+  float: left;
+}
+
+.settings_input {
+	border: 1px solid #ccc;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.settings_submit {
+	border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.settings_header {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.save_details, #close_account, #update_details {
+  padding: 5px;
+}
+
+#close_account, #update_details {
+  color: white;
+}
