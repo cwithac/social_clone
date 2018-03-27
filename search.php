@@ -53,7 +53,7 @@ if(isset($_GET['type'])) {
  				//Generate button depending on friendship status
  				if($user_obj->isFriend($row['username']))
  					$button = "<input type='submit' name='" . $row['username'] . "' class='danger' value='Remove Friend'>";
- 				else if($user_obj->didReceiveRequest($row['username']))
+ 				else if($user_obj->didRecieveRequest($row['username']))
  					$button = "<input type='submit' name='" . $row['username'] . "' class='warning' value='Respond to request'>";
  				else if($user_obj->didSendRequest($row['username']))
  					$button = "<input type='submit' class='default' value='Request Sent'>";

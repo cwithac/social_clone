@@ -72,7 +72,7 @@ if(isset($_POST['post_message'])) {
           if($logged_in_user_obj->isFriend($username)) {
             //If accounts are friends...
             echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
-          } else if ($logged_in_user_obj->didRecieveRequest($username)){
+          } else if ($logged_in_user_obj->didReceiveRequest($username)){
             //Response to friend request option
             echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
           } else if ($logged_in_user_obj->didSendRequest($username)){
